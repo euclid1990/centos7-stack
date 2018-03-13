@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  stack:
+    privileged: true
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: centos7-stack:latest
+    restart: on-failure
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - ./httpd/default.conf:/etc/httpd/conf.d/welcome.conf
+      - ./app:/var/www/app
+    ports:
+      - "8080:8080"
+      - "9111:9111"
