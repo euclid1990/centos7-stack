@@ -23,7 +23,11 @@ $ docker-compose up --build
 
 ### Testing
 
-Go to http://localhost:8080
+Go to
+
+→　Web app: http://localhost:8080
+
+→　Supervisord: http://localhost:9111 `user: sv | password: password`
 
 ### Note
 
